@@ -1,0 +1,10 @@
+{
+  "name": "pulse",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Uptime monitor: checks your websites every minute and shows the history.",
+  "packageManager": "pnpm@12.4.1",
+  "engines": {
+    "node": ">=24"
+  }
+}
