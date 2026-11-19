@@ -1,18 +1,24 @@
+# packages downloaded by pnpm
 node_modules/
 
+# files produced by builds and tests
 dist/
 coverage/
 *.tsbuildinfo
 
+# secrets and local settings
 .env
 .env.*
 !.env.example
 
+# logs
 *.log
 
+# files your operating system creates
 .DS_Store
 Thumbs.db
 
-claude.md
+# my notes with Claude, and Claude Code settings
+/CLAUDE.md
+/PROGRESS.md
 .claude/
-progress.md
