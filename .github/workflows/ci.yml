@@ -28,5 +28,6 @@ jobs:
       - uses: actions/checkout@v7
       - run: docker compose up --build --detach --wait
       - run: curl --fail http://localhost:3000/health
+      - run: 'curl --fail --silent --show-error http://localhost:3001 | grep "Server says: ok"'
       - if: failure()
         run: docker compose logs
