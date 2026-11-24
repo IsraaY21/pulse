@@ -31,4 +31,22 @@ describe('CORS', () => {
       'http://localhost:3001',
     );
   });
+
+  it('lets the phone app in a browser read the answer', async () => {
+    const response = await request(app.getHttpServer())
+      .get('/health')
+      .set('Origin', 'http://localhost:3002');
+
+    expect(response.headers['access-control-allow-origin']).toBe(
+      'http://localhost:3002',
+    );
+  });
+
+  it('does not let an unknown page read the answer', async () => {
+    const response = await request(app.getHttpServer())
+      .get('/health')
+      .set('Origin', 'http://localhost:9999');
+
+    expect(response.headers['access-control-allow-origin']).toBeUndefined();
+  });
 });
