@@ -7,7 +7,12 @@
     "start": "expo start --port 3002",
     "android": "expo start --android --port 3002",
     "web": "expo start --web --port 3002",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "jest"
+  },
+  "jest": {
+    "preset": "jest-expo",
+    "testTimeout": 30000
   },
   "dependencies": {
     "@expo/ui": "~58.0.29",
@@ -35,7 +40,11 @@
     "react-native-worklets": "0.13.0"
   },
   "devDependencies": {
+    "@testing-library/react-native": "^14.1.0",
+    "@types/jest": "30.0.0",
     "@types/react": "~19.3.0",
+    "jest": "~30.5.2",
+    "jest-expo": "~58.0.15",
     "typescript": "~6.0.3"
   }
 }
