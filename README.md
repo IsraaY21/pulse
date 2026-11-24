@@ -8,7 +8,7 @@ Stack: NestJS, Next.js, React Native, PostgreSQL, Redis and Docker.
 
 ## Status
 
-Work in progress. The API has one endpoint, `GET /health`. A web page asks it and shows the answer. Both run in Docker, and GitHub Actions checks every pull request.
+Work in progress. The API has one endpoint, `GET /health`. A web page and a phone app ask it and show the answer. The API and the web page run in Docker, and GitHub Actions checks every pull request.
 
 ## Start with Docker
 
@@ -44,3 +44,17 @@ pnpm --filter api start:dev
 ```bash
 pnpm --filter web dev
 ```
+
+## The phone app
+
+The phone app is built with Expo and React Native. It does not run in Docker. It needs the API on port 3000, from Docker or from `pnpm --filter api start:dev`.
+
+With an Android emulator from Android Studio:
+
+```bash
+pnpm --filter mobile android
+```
+
+This starts the Expo server on port 3002 and opens the app in the emulator. Press the button, and the screen shows `App says: ok`.
+
+Without an emulator, open http://localhost:3002 in a browser while the Expo server runs. It is the same app.
